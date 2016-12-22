@@ -10,9 +10,9 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
-use Orchestra\Testbench\Contracts\TestCase as TestCaseContract;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
+use Orchestra\Testbench\BrowserKit\Contracts\TestCase as TestCaseContract;
 
 abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseContract
 {
