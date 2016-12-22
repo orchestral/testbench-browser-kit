@@ -18,5 +18,10 @@
         "orchestra/testbench": "~3.4.0",
         "laravel/browser-kit-testing": "~1.0"
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.4-dev"
+        }
+    },
     "minimum-stability": "dev"
 }
