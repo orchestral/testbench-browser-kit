@@ -2,10 +2,6 @@
     "name": "orchestra/testbench-browser-kit",
     "description": "Laravel Browser Kit Testing Helper for Packages Development",
     "type": "library",
-    "require": {
-        "orchestra/testbench": "~3.4.0",
-        "laravel/browser-kit-testing": "~1.0"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -13,5 +9,14 @@
             "email": "crynobone@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Orchestra\\Testbench\\BrowserKit\\": "src/"
+        }
+    },
+    "require": {
+        "orchestra/testbench": "~3.4.0",
+        "laravel/browser-kit-testing": "~1.0"
+    },
     "minimum-stability": "dev"
 }
