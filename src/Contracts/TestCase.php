@@ -2,12 +2,11 @@
 
 namespace Orchestra\Testbench\BrowserKit\Contracts;
 
-
 use Orchestra\Testbench\Contracts\TestCase as TestCaseContract;
 
 interface TestCase extends TestCaseContract
 {
-     /**
+    /**
      * Assert that the session has a given list of values.
      *
      * @param  array $bindings
@@ -16,7 +15,7 @@ interface TestCase extends TestCaseContract
      */
     public function assertSessionHasAll(array $bindings);
 
-     /**
+    /**
      * Call a controller action and return the Response.
      *
      * @param  string $method
@@ -103,7 +102,7 @@ interface TestCase extends TestCaseContract
      */
     public function session(array $data);
 
-     /**
+    /**
      * Assert that the client response has an OK status code.
      *
      * @return void

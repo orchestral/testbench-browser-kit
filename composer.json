@@ -19,6 +19,7 @@
         "laravel/browser-kit-testing": "~1.0"
     },
     "require-dev": {
+        "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "~5.0"
     },
     "extra": {

@@ -2,6 +2,7 @@
 
 namespace Orchestra\Testbench\BrowserKit;
 
+use Mockery;
 use Orchestra\Testbench\Traits\WithFactories;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
