@@ -3,6 +3,8 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Mockery;
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\Traits\WithFactories;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
