@@ -3,12 +3,12 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Mockery;
-use Laravel\BrowserKitTesting\WithoutEvents;
 use Orchestra\Testbench\Traits\WithFactories;
-use Laravel\BrowserKitTesting\WithoutMiddleware;
+use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
-use Laravel\BrowserKitTesting\DatabaseMigrations;
-use Laravel\BrowserKitTesting\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
@@ -84,6 +84,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
             call_user_func($callback);
         }
 
+        Facade::clearResolvedInstances();
+
+        Model::setEventDispatcher($this->app['events']);
+
         $this->setUpHasRun = true;
     }
 
@@ -108,12 +112,12 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
     {
         $uses = array_flip(class_uses_recursive(static::class));
 
-        if (isset($uses[DatabaseTransactions::class])) {
-            $this->beginDatabaseTransaction();
-        }
-
         if (isset($uses[DatabaseMigrations::class])) {
             $this->runDatabaseMigrations();
+        }
+
+        if (isset($uses[DatabaseTransactions::class])) {
+            $this->beginDatabaseTransaction();
         }
 
         if (isset($uses[WithoutMiddleware::class])) {
@@ -132,10 +136,6 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
      */
     protected function tearDown()
     {
-        if (class_exists('Mockery')) {
-            Mockery::close();
-        }
-
         if ($this->app) {
             foreach ($this->beforeApplicationDestroyedCallbacks as $callback) {
                 call_user_func($callback);
@@ -152,7 +152,11 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
             $this->serverVariables = [];
         }
 
-        $this->afterApplicationCreatedCallbacks    = [];
+        if (class_exists('Mockery')) {
+            Mockery::close();
+        }
+
+        $this->afterApplicationCreatedCallbacks = [];
         $this->beforeApplicationDestroyedCallbacks = [];
     }
 
