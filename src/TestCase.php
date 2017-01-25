@@ -3,8 +3,12 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Mockery;
+use Laravel\BrowserKitTesting\WithoutEvents;
 use Orchestra\Testbench\Traits\WithFactories;
+use Laravel\BrowserKitTesting\WithoutMiddleware;
 use Orchestra\Testbench\Traits\ApplicationTrait;
+use Laravel\BrowserKitTesting\DatabaseMigrations;
+use Laravel\BrowserKitTesting\DatabaseTransactions;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
