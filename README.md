@@ -40,3 +40,7 @@ And then run `composer install` from the terminal.
 Above installation can also be simplify by using the following command:
 
     composer require --dev "orchestra/testbench-browser-kit=~3.4"
+
+## Usage
+
+Testbench Browser Kit added Browser Kit testing support for Laravel 5.4 and above. All you need to do is to replace `Orchestra\Testbench\TestCase` to `Orchestra\Testbench\BrowserKit\TestCase` and you should be good to go.
