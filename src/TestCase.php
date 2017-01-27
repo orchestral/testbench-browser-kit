@@ -10,9 +10,9 @@ use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Orchestra\Testbench\Traits\WithLoadMigrationsFrom;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
-use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
@@ -33,7 +33,8 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
         InteractsWithDatabase,
         InteractsWithSession,
         MocksApplicationServices,
-        WithFactories;
+        WithFactories,
+        WithLoadMigrationsFrom;
 
     /**
      * The Illuminate application instance.
@@ -159,7 +160,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
             Mockery::close();
         }
 
-        $this->afterApplicationCreatedCallbacks = [];
+        $this->afterApplicationCreatedCallbacks    = [];
         $this->beforeApplicationDestroyedCallbacks = [];
     }
 
@@ -177,26 +178,6 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
         if ($this->setUpHasRun) {
             call_user_func($callback);
         }
-    }
-
-    /**
-     * Define hooks to migrate the database before and after each test.
-     *
-     * @param  string|array  $realpah
-     *
-     * @return void
-     */
-    protected function loadMigrationsFrom($realpath)
-    {
-        $options = is_array($realpath) ? $realpath : ['--realpath' => $realpath];
-
-        $this->artisan('migrate', $options);
-
-        $this->app[ConsoleKernel::class]->setArtisan(null);
-
-        $this->beforeApplicationDestroyed(function () use ($options) {
-            $this->artisan('migrate:rollback', $options);
-        });
     }
 
     /**
