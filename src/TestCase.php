@@ -159,7 +159,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
             Mockery::close();
         }
 
-        $this->afterApplicationCreatedCallbacks = [];
+        $this->afterApplicationCreatedCallbacks    = [];
         $this->beforeApplicationDestroyedCallbacks = [];
     }
 
