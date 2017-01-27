@@ -14,6 +14,7 @@ Testbench Component is a simple package that is supposed to help you write tests
 
 * [Version Compatibility](#version-compatibility)
 * [Installation](#installation)
+* [Usage](#usage)
 
 ## Version Compatibility
 
