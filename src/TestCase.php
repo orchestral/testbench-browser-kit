@@ -3,16 +3,18 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Mockery;
+use Exception;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\Traits\WithFactories;
+use Orchestra\Database\ConsoleServiceProvider;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
 use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
+use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
@@ -188,6 +190,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
      */
     protected function loadMigrationsFrom($realpath)
     {
+        if (! class_exists(ConsoleServiceProvider::class)) {
+            throw new Exception('Missing `orchestra/database` in composer.json');
+        }
+
         $options = is_array($realpath) ? $realpath : ['--realpath' => $realpath];
 
         $this->artisan('migrate', $options);
