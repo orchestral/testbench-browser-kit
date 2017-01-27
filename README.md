@@ -1,4 +1,4 @@
-Laravel BrowserKit Testing Helper for Packages Development
+Laravel Browser Kit Testing Helper for Packages Development
 ==============
 
 [![Join the chat at https://gitter.im/orchestral/testbench](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orchestral/testbench?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -17,7 +17,7 @@ Testbench Component is a simple package that is supposed to help you write tests
 
 ## Version Compatibility
 
- Laravel  | Testbench BrowserKit
+ Laravel  | Testbench Browser Kit
 :---------|:----------
  5.4.x    | 3.4.x@dev
 
