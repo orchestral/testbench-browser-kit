@@ -20,6 +20,9 @@ Testbench Component is a simple package that is supposed to help you write tests
 
  Laravel  | Testbench Browser Kit
 :---------|:----------
+ 5.1.x    | 3.1.x
+ 5.2.x    | 5.2.x
+ 5.3.x    | 3.3.x
  5.4.x    | 3.4.x@dev
  5.5.x    | 3.5.x@dev
 
@@ -30,7 +33,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require-dev": {
-        "orchestra/testbench-browser-kit": "~3.4"
+        "orchestra/testbench-browser-kit": "~3.1"
     }
 }
 ```
@@ -41,7 +44,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-    composer require --dev "orchestra/testbench-browser-kit=~3.4"
+    composer require --dev "orchestra/testbench-browser-kit=~3.1"
 
 ## Usage
 
