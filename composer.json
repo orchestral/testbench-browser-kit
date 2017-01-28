@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "orchestra/testbench": "~3.2.6"
+        "orchestra/testbench": "~3.3.4"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.4",
@@ -25,7 +25,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.2-dev"
+            "dev-master": "3.3-dev"
         }
     },
     "config": {
