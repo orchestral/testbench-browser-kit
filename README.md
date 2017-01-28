@@ -8,9 +8,9 @@ Testbench Component is a simple package that is supposed to help you write tests
 [![Latest Stable Version](https://img.shields.io/github/release/orchestral/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![Total Downloads](https://img.shields.io/packagist/dt/orchestra/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![MIT License](https://img.shields.io/packagist/l/orchestra/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
-[![Build Status](https://img.shields.io/travis/orchestral/testbench-browser-kit/3.4.svg?style=flat-square)](https://travis-ci.org/orchestral/testbench-browser-kit)
-[![Coverage Status](https://img.shields.io/coveralls/orchestral/testbench-browser-kit/3.4.svg?style=flat-square)](https://coveralls.io/r/orchestral/testbench-browser-kit?branch=3.4)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/testbench-browser-kit/3.4.svg?style=flat-square)](https://scrutinizer-ci.com/g/orchestral/testbench-browser-kit/)
+[![Build Status](https://img.shields.io/travis/orchestral/testbench-browser-kit/3.1.svg?style=flat-square)](https://travis-ci.org/orchestral/testbench-browser-kit)
+[![Coverage Status](https://img.shields.io/coveralls/orchestral/testbench-browser-kit/3.1.svg?style=flat-square)](https://coveralls.io/r/orchestral/testbench-browser-kit?branch=3.1)
+[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/testbench-browser-kit/3.1.svg?style=flat-square)](https://scrutinizer-ci.com/g/orchestral/testbench-browser-kit/)
 
 * [Version Compatibility](#version-compatibility)
 * [Installation](#installation)
@@ -20,6 +20,7 @@ Testbench Component is a simple package that is supposed to help you write tests
 
  Laravel  | Testbench Browser Kit
 :---------|:----------
+ 5.1.x    | 3.1.x
  5.4.x    | 3.4.x@dev
 
 ## Installation
@@ -29,7 +30,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require-dev": {
-        "orchestra/testbench-browser-kit": "~3.4"
+        "orchestra/testbench-browser-kit": "~3.1"
     }
 }
 ```
@@ -40,7 +41,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-    composer require --dev "orchestra/testbench-browser-kit=~3.4"
+    composer require --dev "orchestra/testbench-browser-kit=~3.1"
 
 ## Usage
 

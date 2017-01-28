@@ -17,20 +17,15 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "laravel/browser-kit-testing": "~1.0.3",
-        "orchestra/testbench": "~3.4.2"
+        "orchestra/testbench": "~3.1.8"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "~5.7",
-        "orchestra/database": "~3.4.0"
-    },
-    "suggest": {
-        "orchestra/database": "Allow to use --realpath migration for testing (~3.4)."
+        "phpunit/phpunit": "~4.0 || ~5.0"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.4-dev"
+            "dev-master": "3.1-dev"
         }
     },
     "config": {
