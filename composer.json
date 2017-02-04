@@ -15,6 +15,11 @@
             "Orchestra\\Testbench\\BrowserKit\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/"
+        }
+    },
     "require": {
         "php": ">=5.6.0",
         "orchestra/testbench": "~3.2.6"
