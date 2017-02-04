@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\TestCase;
+namespace Orchestra\Testbench\BrowserKit\Tests;
 
 use Illuminate\Routing\Router;
 
@@ -110,7 +110,7 @@ class RouteTest extends \Orchestra\Testbench\BrowserKit\TestCase
         $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
 
         $this->assertResponseOk();
-        $this->assertEquals('FooController@index', $crawler->getContent());
+        $this->assertEquals('Controller@index', $crawler->getContent());
     }
 
     /**
