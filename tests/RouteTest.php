@@ -125,4 +125,18 @@ class RouteTest extends \Orchestra\Testbench\BrowserKit\TestCase
         $this->assertResponseOk();
         $this->assertEquals('Controller@index', $crawler->getContent());
     }
+
+    /**
+     * Test POST foo route using JSON call.
+     *
+     * @test
+     */
+    public function testGostFooIndexRouteUsingPostAndReturnJson()
+    {
+        $crawler = $this->post('foo', [
+            'content' => 'First comment',
+        ])->seeJson([
+            'content' => 'First comment',
+        ]);
+    }
 }
