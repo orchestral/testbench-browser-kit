@@ -33,7 +33,7 @@ class RouteTest extends \Orchestra\Testbench\BrowserKit\TestCase
             })->name('boss.bye');
         });
 
-        $app['router']->resource('foo', 'Orchestra\Testbench\TestCase\FooController');
+        $app['router']->resource('foo', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller');
     }
 
     /**
@@ -107,7 +107,7 @@ class RouteTest extends \Orchestra\Testbench\BrowserKit\TestCase
      */
     public function testGetFooIndexRouteUsingAction()
     {
-        $crawler = $this->action('GET', '\Orchestra\Testbench\TestCase\FooController@index');
+        $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
 
         $this->assertResponseOk();
         $this->assertEquals('FooController@index', $crawler->getContent());
@@ -123,14 +123,6 @@ class RouteTest extends \Orchestra\Testbench\BrowserKit\TestCase
         $crawler = $this->call('GET', 'foo');
 
         $this->assertResponseOk();
-        $this->assertEquals('FooController@index', $crawler->getContent());
-    }
-}
-
-class FooController extends \Illuminate\Routing\Controller
-{
-    public function index()
-    {
-        return 'FooController@index';
+        $this->assertEquals('Controller@index', $crawler->getContent());
     }
 }
