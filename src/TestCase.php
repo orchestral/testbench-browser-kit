@@ -11,6 +11,7 @@ use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Orchestra\Testbench\Traits\WithLaravelMigrations;
 use Orchestra\Testbench\Traits\WithLoadMigrationsFrom;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
@@ -35,6 +36,7 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
         InteractsWithSession,
         MocksApplicationServices,
         WithFactories,
+        WithLaravelMigrations,
         WithLoadMigrationsFrom;
 
     /**
