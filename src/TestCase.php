@@ -6,10 +6,12 @@ use Mockery;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\Traits\WithFactories;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Orchestra\Testbench\Traits\WithLaravelMigrations;
 use Orchestra\Testbench\Traits\WithLoadMigrationsFrom;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
@@ -22,7 +24,7 @@ use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
 use Orchestra\Testbench\BrowserKit\Contracts\TestCase as TestCaseContract;
 
-abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseContract
+abstract class TestCase extends BaseTestCase implements TestCaseContract
 {
     use ApplicationTrait,
         InteractsWithContainer,
@@ -34,6 +36,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase implements TestCaseC
         InteractsWithSession,
         MocksApplicationServices,
         WithFactories,
+        WithLaravelMigrations,
         WithLoadMigrationsFrom;
 
     /**
