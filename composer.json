@@ -27,8 +27,8 @@
     },
     "require-dev": {
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "~6.0",
-        "orchestra/database": "~3.5.0"
+        "orchestra/database": "~3.5.0",
+        "phpunit/phpunit": "~6.0"
     },
     "suggest": {
         "orchestra/database": "Allow to use --realpath migration for testing (~3.5)."
