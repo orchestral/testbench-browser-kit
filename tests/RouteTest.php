@@ -37,12 +37,8 @@ class RouteTest extends TestCase
         $app['router']->resource('foo', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller');
     }
 
-    /**
-     * Test GET routes.
-     *
-     * @test
-     */
-    public function testGetRoutes()
+    /** @test */
+    function can_send_request()
     {
         $crawler = $this->call('GET', 'hello');
 
@@ -53,12 +49,8 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye world', $crawler->getContent());
     }
 
-    /**
-     * Test GET routes via named route.
-     *
-     * @test
-     */
-    public function testGetRoutesViaNamedRoute()
+    /** @test */
+    function can_send_request_via_named_route()
     {
         $crawler = $this->route('GET', 'hi');
 
@@ -69,12 +61,8 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye world', $crawler->getContent());
     }
 
-    /**
-     * Test GET routes with prefix.
-     *
-     * @test
-     */
-    public function testGetPrefixedRoutes()
+    /** @test */
+    function can_send_request_with_prefix()
     {
         $crawler = $this->call('GET', 'boss/hello');
 
@@ -85,12 +73,8 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye boss', $crawler->getContent());
     }
 
-    /**
-     * Test GET routes with prefix via named route.
-     *
-     * @test
-     */
-    public function testGetPrefixedRoutesViaNameRoute()
+    /** @test */
+    function can_send_request_with_prefix_via_named_route()
     {
         $crawler = $this->route('GET', 'boss.hi');
 
@@ -101,12 +85,8 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye boss', $crawler->getContent());
     }
 
-    /**
-     * Test GET foo/index route using action.
-     *
-     * @test
-     */
-    public function testGetFooIndexRouteUsingAction()
+    /** @test */
+    function can_send_request_using_action_helper()
     {
         $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
 
@@ -114,12 +94,8 @@ class RouteTest extends TestCase
         $this->assertEquals('Controller@index', $crawler->getContent());
     }
 
-    /**
-     * Test GET foo/index route using call.
-     *
-     * @test
-     */
-    public function testGetFooIndexRouteUsingCall()
+    /** @test */
+    function can_send_request_using_call_helper()
     {
         $crawler = $this->call('GET', 'foo');
 
@@ -127,12 +103,8 @@ class RouteTest extends TestCase
         $this->assertEquals('Controller@index', $crawler->getContent());
     }
 
-    /**
-     * Test POST foo route using JSON call.
-     *
-     * @test
-     */
-    public function testGostFooIndexRouteUsingPostAndReturnJson()
+    /** @test */
+    function can_send_request_using_post_and_return_json()
     {
         $crawler = $this->post('foo', [
             'content' => 'First comment',
