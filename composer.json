@@ -23,19 +23,19 @@
     "require": {
         "php": ">=7.0",
         "laravel/browser-kit-testing": "~2.0",
-        "orchestra/testbench": "~3.5.0"
+        "orchestra/testbench": "~3.6.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.4",
-        "orchestra/database": "~3.5.0",
+        "orchestra/database": "~3.6.0",
         "phpunit/phpunit": "~6.0"
     },
     "suggest": {
-        "orchestra/database": "Allow to use --realpath migration for testing (~3.5)."
+        "orchestra/database": "Allow to use --realpath migration for testing (~3.6)."
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.5-dev"
+            "dev-master": "3.6-dev"
         }
     },
     "config": {
