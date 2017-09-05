@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.5.1
+
+Released: 2017-09-05
+
+### Changes
+
+* Allow to use `Illuminate\Foundation\Testing\RefreshDatabase`.
+
 ## 3.5.0
 
 Released: 2017-08-25
