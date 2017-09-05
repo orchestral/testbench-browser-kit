@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\Traits\WithFactories;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithoutEvents;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\Traits\CreatesApplication;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -118,6 +119,10 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
     protected function setUpTraits()
     {
         $uses = array_flip(class_uses_recursive(static::class));
+
+        if (isset($uses[RefreshDatabase::class])) {
+            $this->refreshDatabase();
+        }
 
         if (isset($uses[DatabaseMigrations::class])) {
             $this->runDatabaseMigrations();
