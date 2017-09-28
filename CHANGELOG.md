@@ -19,6 +19,18 @@ Released: 2017-08-25
 * Update support for Laravel Framework v5.5.
 * Update `laravel/browser-kit-testing` to `~2.0`.
 
+## 3.4.1
+
+Released: 2017-09-28
+
+### Added
+
+* Add `Orchestra\Testbench\Traits\WithLaravelMigrations` by default.
+
+### Changes
+
+* Return `$uses` from `Orchestra\Tesbench\BrowserKit\TestCase::setUpTraits()` method.
+
 ## 3.4.0
 
 Released: 2017-01-27
