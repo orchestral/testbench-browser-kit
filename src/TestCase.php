@@ -163,7 +163,7 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
             Mockery::close();
         }
 
-        $this->afterApplicationCreatedCallbacks    = [];
+        $this->afterApplicationCreatedCallbacks = [];
         $this->beforeApplicationDestroyedCallbacks = [];
     }
 
