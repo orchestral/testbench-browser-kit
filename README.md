@@ -5,12 +5,11 @@ Laravel Browser Kit Testing Helper for Packages Development
 
 Testbench Component is a simple package that is supposed to help you write tests for your Laravel package, especially when there is routing involved.
 
-[![Latest Stable Version](https://img.shields.io/github/release/orchestral/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
-[![Total Downloads](https://img.shields.io/packagist/dt/orchestra/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
-[![MIT License](https://img.shields.io/packagist/l/orchestra/testbench-browser-kit.svg?style=flat-square)](https://packagist.org/packages/orchestra/testbench-browser-kit)
-[![Build Status](https://img.shields.io/travis/orchestral/testbench-browser-kit/master.svg?style=flat-square)](https://travis-ci.org/orchestral/testbench-browser-kit)
-[![Coverage Status](https://img.shields.io/coveralls/orchestral/testbench-browser-kit/master.svg?style=flat-square)](https://coveralls.io/r/orchestral/testbench-browser-kit?branch=master)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/orchestral/testbench-browser-kit/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/orchestral/testbench-browser-kit/)
+[![Build Status](https://travis-ci.org/orchestral/testbench-browser-kit.svg?branch=3.5)](https://travis-ci.org/orchestral/testbench-browser-kit)
+[![Latest Stable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/stable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
+[![Total Downloads](https://poser.pugx.org/orchestra/testbench-browser-kit/downloads)](https://packagist.org/packages/orchestra/testbench-browser-kit)
+[![Latest Unstable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/unstable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
+[![License](https://poser.pugx.org/orchestra/testbench-browser-kit/license)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 
 * [Version Compatibility](#version-compatibility)
 * [Installation](#installation)
@@ -24,8 +23,8 @@ Testbench Component is a simple package that is supposed to help you write tests
  5.1.x    | 3.1.x
  5.2.x    | 5.2.x
  5.3.x    | 3.3.x
- 5.4.x    | 3.4.x@dev
- 5.5.x    | 3.5.x@dev
+ 5.4.x    | 3.4.x
+ 5.5.x    | 3.5.x
 
 ## Installation
 
