@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.5.3
+
+Released: 2017-09-28
+
+### Changes
+
+* Add mockery expectations to the assertion count. ([@scrubmx](https://github.com/scrubmx))
+
 ## 3.5.2
 
 Released: 2017-09-28
