@@ -5,6 +5,10 @@ Laravel Browser Kit Testing Helper for Packages Development
 
 Testbench Component is a simple package that is supposed to help you write tests for your Laravel package, especially when there is routing involved.
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/CGorXzjcVJndWFmvAQUuQQDA/orchestral/testbench-browser-kit'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/CGorXzjcVJndWFmvAQUuQQDA/orchestral/testbench-browser-kit.svg' />
+</a>
+
 [![Build Status](https://travis-ci.org/orchestral/testbench-browser-kit.svg?branch=3.5)](https://travis-ci.org/orchestral/testbench-browser-kit)
 [![Latest Stable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/stable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![Total Downloads](https://poser.pugx.org/orchestra/testbench-browser-kit/downloads)](https://packagist.org/packages/orchestra/testbench-browser-kit)
