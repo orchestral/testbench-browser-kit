@@ -5,8 +5,8 @@ namespace Orchestra\Testbench\BrowserKit;
 use Mockery;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
+use PHPUnit\Framework\TestCase as PHPUnit;
 use Orchestra\Testbench\Traits\WithFactories;
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\Traits\CreatesApplication;
@@ -23,9 +23,8 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
-use Orchestra\Testbench\BrowserKit\Contracts\TestCase as TestCaseContract;
 
-abstract class TestCase extends BaseTestCase implements TestCaseContract
+abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
     use CreatesApplication,
         InteractsWithContainer,
@@ -181,7 +180,7 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
      *
      * @return void
      */
-    protected function afterApplicationCreated(callable $callback)
+    protected function afterApplicationCreated(callable $callback): void
     {
         $this->afterApplicationCreatedCallbacks[] = $callback;
 
@@ -197,7 +196,7 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
      *
      * @return void
      */
-    protected function beforeApplicationDestroyed(callable $callback)
+    protected function beforeApplicationDestroyed(callable $callback): void
     {
         $this->beforeApplicationDestroyedCallbacks[] = $callback;
     }
