@@ -3,9 +3,12 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Mockery;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Testing\WithFaker;
 use Orchestra\Testbench\Traits\WithFactories;
+use Illuminate\Console\Application as Artisan;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -140,6 +143,10 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
             $this->disableEventsForAllTests();
         }
 
+        if (isset($uses[WithFaker::class])) {
+            $this->setUpFaker();
+        }
+
         return $uses;
     }
 
@@ -166,6 +173,10 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
             $this->serverVariables = [];
         }
 
+        if (property_exists($this, 'defaultHeaders')) {
+            $this->defaultHeaders = [];
+        }
+
         if (class_exists('Mockery')) {
             if ($container = Mockery::getContainer()) {
                 $this->addToAssertionCount($container->mockery_getExpectationCount());
@@ -174,8 +185,12 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
             Mockery::close();
         }
 
+        Carbon::setTestNow();
+
         $this->afterApplicationCreatedCallbacks = [];
         $this->beforeApplicationDestroyedCallbacks = [];
+
+        Artisan::forgetBootstrappers();
     }
 
     /**
@@ -203,7 +218,7 @@ abstract class TestCase extends BaseTestCase implements TestCaseContract
      */
     protected function beforeApplicationDestroyed(callable $callback)
     {
-        $this->beforeApplicationDestroyedCallbacks[] = $callback;
+        array_unshift($this->beforeApplicationDestroyedCallbacks, $callback);
     }
 
     /**
