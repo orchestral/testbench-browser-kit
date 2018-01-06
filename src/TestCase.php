@@ -6,15 +6,10 @@ use Mockery;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use PHPUnit\Framework\TestCase as PHPUnit;
-use Orchestra\Testbench\Traits\WithFactories;
-=======
 use Illuminate\Foundation\Testing\WithFaker;
 use Orchestra\Testbench\Traits\WithFactories;
 use Illuminate\Console\Application as Artisan;
-use PHPUnit\Framework\TestCase as BaseTestCase;
->>>>>>> 3.5
 use Illuminate\Foundation\Testing\WithoutEvents;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\Traits\CreatesApplication;
