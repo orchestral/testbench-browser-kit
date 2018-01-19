@@ -3,7 +3,7 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Orchestra\Testbench\Concerns\Testing;
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use PHPUnit\Framework\TestCase as PHPUnit;
 use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
@@ -12,9 +12,8 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
-use Orchestra\Testbench\BrowserKit\Contracts\TestCase as TestCaseContract;
 
-abstract class TestCase extends BaseTestCase implements TestCaseContract
+abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
     use Testing,
         ImpersonatesUsers,
