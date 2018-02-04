@@ -17,8 +17,8 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
     use ImpersonatesUsers,
         InteractsWithAuthentication,
-        InteractsWithContainer,
         InteractsWithConsole,
+        InteractsWithContainer,
         InteractsWithDatabase,
         InteractsWithSession,
         MakesHttpRequests,
