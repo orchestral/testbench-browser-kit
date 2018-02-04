@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.5.4
+
+Released: 2018-01-06
+
+### Changes
+
+* Update `Orchestra\Testbench\BrowserKit\TestCase` to match `Illuminate\Foundation\Testing\TestCase`.
+
 ## 3.5.3
 
 Released: 2017-09-28

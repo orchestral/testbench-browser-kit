@@ -15,15 +15,15 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
-    use Testing,
-        InteractsWithContainer,
-        MakesHttpRequests,
-        ImpersonatesUsers,
+    use ImpersonatesUsers,
         InteractsWithAuthentication,
+        InteractsWithContainer,
         InteractsWithConsole,
         InteractsWithDatabase,
         InteractsWithSession,
-        MocksApplicationServices;
+        MakesHttpRequests,
+        MocksApplicationServices,
+        Testing;
 
     /**
      * The base URL to use while testing the application.
