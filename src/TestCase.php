@@ -15,15 +15,15 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
-    use Testing,
-        InteractsWithContainer,
-        MakesHttpRequests,
-        ImpersonatesUsers,
+    use ImpersonatesUsers,
         InteractsWithAuthentication,
         InteractsWithConsole,
+        InteractsWithContainer,
         InteractsWithDatabase,
         InteractsWithSession,
-        MocksApplicationServices;
+        MakesHttpRequests,
+        MocksApplicationServices,
+        Testing;
 
     /**
      * The base URL to use while testing the application.
@@ -50,6 +50,16 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     protected function tearDown()
     {
         $this->tearDownTheTestEnvironment();
+    }
+
+    /**
+     * Boot the testing helper traits.
+     *
+     * @return array
+     */
+    protected function setUpTraits()
+    {
+        return $this->setUpTheTestEnvironmentTraits();
     }
 
     /**
