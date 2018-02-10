@@ -2,6 +2,15 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.6.0
+
+Released: 2018-02-10
+
+### Changes
+
+* Update support for Laravel Framework v5.6.
+* Update `laravel/browser-kit-testing` to `~4.0`.
+
 ## 3.5.4
 
 Released: 2018-01-06
