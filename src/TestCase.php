@@ -12,6 +12,7 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
