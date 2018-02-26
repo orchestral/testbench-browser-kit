@@ -12,6 +12,7 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
@@ -20,6 +21,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
         InteractsWithConsole,
         InteractsWithContainer,
         InteractsWithDatabase,
+        InteractsWithExceptionHandling,
         InteractsWithSession,
         MakesHttpRequests,
         MocksApplicationServices,
@@ -59,7 +61,9 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function setUpTraits()
     {
-        return $this->setUpTheTestEnvironmentTraits();
+        $uses = array_flip(class_uses_recursive(static::class));
+
+        return $this->setUpTheTestEnvironmentTraits($uses);
     }
 
     /**
