@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.5.5
+
+Released: 2018-02-28
+
+### Changes
+
+* Update `Orchestra\Testbench\BrowserKit\TestCase` to implements `Orchestra\Testbench\Concerns\Testing` trait.
+
 ## 3.5.4
 
 Released: 2018-01-06
