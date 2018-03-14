@@ -2,6 +2,13 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.6.1
+
+Released: 2018-03-14
+
+### Changes
+
+* Add `Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling` to `Orchestra\Testbench\BrowserKit\TestCase`.
 
 ## 3.6.0
 
