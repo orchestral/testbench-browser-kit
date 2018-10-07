@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.7.2
+
+Released: 2018-10-07
+
+### Fixes
+
+* Fixes dependencies constraint.
+
 ## 3.7.1
 
 Released: 2018-10-07
