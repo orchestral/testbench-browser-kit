@@ -2,6 +2,15 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.7.1
+
+Released: 2018-10-07
+
+### Changes
+
+* Update minimum support for Testbench v3.7.3+.
+    - Allows `Orchestra\Testbench\Database\MigrateProcessor` to accept both `int` exit code and `Illuminate\Foundation\Testing\PendingCommand` when running migration via artisan.
+    - Update Laravel 5.7 skeleton.
 
 ## 3.7.0
 
