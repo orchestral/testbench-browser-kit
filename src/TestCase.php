@@ -73,7 +73,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function refreshApplication()
     {
-        putenv('APP_ENV=testing');
+        $_SERVER['APP_ENV'] = 'testing';
 
         $this->app = $this->createApplication();
     }
