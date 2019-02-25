@@ -61,7 +61,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function setUpTraits()
     {
-        $uses = array_flip(class_uses_recursive(static::class));
+        $uses = \array_flip(\class_uses_recursive(static::class));
 
         return $this->setUpTheTestEnvironmentTraits($uses);
     }
@@ -73,7 +73,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function refreshApplication()
     {
-        $_SERVER['APP_ENV'] = 'testing';
+        $_ENV['APP_ENV'] = 'testing';
 
         $this->app = $this->createApplication();
     }
