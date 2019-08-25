@@ -22,7 +22,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "laravel/browser-kit-testing": "^5.1.4",
+        "laravel/browser-kit-testing": "5.0.x-dev",
         "orchestra/testbench": "^5.0"
     },
     "require-dev": {
