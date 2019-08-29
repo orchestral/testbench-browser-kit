@@ -24,7 +24,7 @@ Testbench Component is a simple package that is supposed to help you write tests
  5.6.x    | 3.6.x
  5.7.x.   | 3.7.x
  5.8.x    | 3.8.x
- 6.0.x    | 3.9.x@dev
+ 6.x      | 3.9.x@dev
 
 ## Installation
 
