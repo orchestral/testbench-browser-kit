@@ -2,7 +2,6 @@
 
 namespace Orchestra\Testbench\BrowserKit\Tests;
 
-use Illuminate\Routing\Router;
 use Orchestra\Testbench\BrowserKit\TestCase;
 
 class ApplicationTest extends TestCase
