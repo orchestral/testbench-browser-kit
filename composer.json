@@ -26,8 +26,8 @@
         "orchestra/testbench": "^3.9"
     },
     "require-dev": {
-        "mockery/mockery": "^1.2.3",
-        "phpunit/phpunit": "^8.3"
+        "mockery/mockery": "^1.2",
+        "phpunit/phpunit": "^8.0"
     },
     "extra": {
         "branch-alias": {
