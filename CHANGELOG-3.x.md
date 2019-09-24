@@ -2,6 +2,15 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.9.1
+
+Released: 2019-09-24
+
+### Changes
+
+* Update minimum support for Testbench v3.9.1+. ([v3.9.0...v3.9.1](https://github.com/orchestral/testbench/compare/v3.9.0...v3.9.1))
+* Support test againsts PHP `7.4snapshot` build on Travis-CI.
+
 ## 3.9.0
 
 Released: 2019-08-29
