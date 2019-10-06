@@ -2,17 +2,17 @@
 
 namespace Orchestra\Testbench\BrowserKit;
 
+use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling;
+use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
+use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
+use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Orchestra\Testbench\Concerns\Testing;
 use PHPUnit\Framework\TestCase as PHPUnit;
-use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
-use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
-use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
