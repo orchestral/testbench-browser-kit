@@ -6,6 +6,8 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 Released: 2019-10-06
 
+### Changes
+
 * Update minimum support for Testbench v4.1.0+. ([v4.0.1...v4.1.0](https://github.com/orchestral/testbench/compare/v4.0.1...v4.1.0))
 
 ## 4.0.1
