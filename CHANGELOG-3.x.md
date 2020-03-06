@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 3.9.3
+
+Released: 2020-03-07
+
+### Changes
+
+* Update minimum support for Testbench v3.9.3+. ([v3.9.2...v3.9.3](https://github.com/orchestral/testbench/compare/v3.9.2...v3.9.3))
+
 ## 3.9.2
 
 Released: 2019-10-11
