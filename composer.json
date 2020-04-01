@@ -21,13 +21,13 @@
         }
     },
     "require": {
-        "php": ">=7.2.5",
-        "laravel/browser-kit-testing": "^6.0",
-        "orchestra/testbench": "^5.1"
+        "php": ">=7.3",
+        "laravel/browser-kit-testing": "dev-master",
+        "orchestra/testbench": "^6.0"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "5.0-dev"
+            "dev-master": "6.0-dev"
         }
     },
     "config": {
