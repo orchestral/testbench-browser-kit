@@ -21,9 +21,9 @@
         }
     },
     "require": {
-        "php": ">=7.3",
-        "laravel/browser-kit-testing": "^6.1",
-        "orchestra/testbench": "^6.0"
+        "php": ">=7.3 || >=8.0",
+        "laravel/browser-kit-testing": "^6.2",
+        "orchestra/testbench": "^6.3"
     },
     "extra": {
         "branch-alias": {
