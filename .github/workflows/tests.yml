@@ -21,12 +21,13 @@ jobs:
           - "7.4"
           - "8.0"
         dependencies:
+          - "locked"
           - "lowest"
           - "highest"
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} on ${{ matrix.os }}
+    name: PHP${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.dependencies }})
 
     steps:
       - name: Checkout code
