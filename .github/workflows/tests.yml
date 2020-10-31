@@ -12,7 +12,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 7.3, 7.2]
+                php: [8.0, 7.4, 7.3, 7.2]
                 os: [ubuntu-latest, windows-latest]
 
         name: PHP${{ matrix.php }} on ${{ matrix.os }}
@@ -28,10 +28,10 @@ jobs:
                   key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
 
             - name: Setup PHP
-              uses: shivammathur/setup-php@v1
+              uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, intl, fileinfo
                   coverage: none
 
             - name: Install dependencies
