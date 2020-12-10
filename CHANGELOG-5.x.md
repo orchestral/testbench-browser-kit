@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 5.5.0
+
+Released: 2020-12-10
+
+### Changes
+
+* Update minimum support for Testbench v5.11.0+. ([v5.10.0...v5.11.0](https://github.com/orchestral/testbench/compare/v5.10.0...v5.11.0))
+
 ## 5.4.0
 
 Released: 2020-12-01
