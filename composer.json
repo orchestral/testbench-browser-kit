@@ -23,7 +23,7 @@
     "require": {
         "php": ">=7.2 || >=8.0",
         "laravel/browser-kit-testing": "^6.2",
-        "orchestra/testbench": "^5.12.1"
+        "orchestra/testbench": "^5.13"
     },
     "extra": {
         "branch-alias": {
