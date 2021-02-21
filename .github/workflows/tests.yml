@@ -14,6 +14,7 @@ jobs:
       matrix:
         os:
           - "ubuntu-latest"
+          - "windows-latest"
         php:
           - "7.2"
           - "7.3"
@@ -32,9 +33,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -62,6 +60,7 @@ jobs:
       matrix:
         os:
           - "ubuntu-latest"
+          - "windows-latest"
         php:
           - "7.2"
           - "7.3"
@@ -80,9 +79,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -110,6 +106,7 @@ jobs:
       matrix:
         os:
           - "ubuntu-latest"
+          - "windows-latest"
         php:
           - "7.3"
           - "7.4"
@@ -128,9 +125,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
