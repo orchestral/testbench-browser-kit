@@ -4,10 +4,10 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 3'
 
 jobs:
-  test-on-phpunit-8:
+  tests-on-phpunit-8:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -50,10 +50,13 @@ jobs:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-cache"
 
+      - name: Prepare Testbench
+        run: composer run prepare
+
       - name: Execute tests
         run: vendor/bin/phpunit
 
-  test-on-phpunit-9:
+  tests-on-phpunit-9:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -66,7 +69,7 @@ jobs:
           - "7.4"
           - "8.0"
         phpunit:
-          - "^9.3"
+          - "^9.3.3"
         dependencies:
           - "locked"
           - "lowest"
@@ -89,13 +92,16 @@ jobs:
 
       - name: Install PHPUnit ${{ matrix.phpunit }}
         run: |
-          composer require "phpunit/phpunit:${{ matrix.phpunit }}" --dev --no-interaction --no-update
+          composer require "phpunit/phpunit:${{ matrix.phpunit }}" --no-interaction --no-update
 
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-cache"
+
+      - name: Prepare Testbench
+        run: composer run prepare
 
       - name: Execute tests
         run: vendor/bin/phpunit
