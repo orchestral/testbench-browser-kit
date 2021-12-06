@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 6.17.2
+
+Released: 2021-12-07
+
+### Changes
+
+* Update minimum support for Testbench v6.23.1+. ([v6.23.0...v6.23.1](https://github.com/orchestral/testbench/compare/v6.23.0...v6.23.1))
+
 ## 6.17.1
 
 Released: 2021-11-10
