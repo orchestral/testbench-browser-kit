@@ -9,7 +9,7 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the session has a given list of values.
      *
-     * @param  array $bindings
+     * @param  array  $bindings
      *
      * @return void
      */
@@ -18,14 +18,14 @@ interface TestCase extends TestCaseContract
     /**
      * Call a controller action and return the Response.
      *
-     * @param  string $method
-     * @param  string $action
-     * @param  array $wildcards
-     * @param  array $parameters
-     * @param  array $files
-     * @param  array $server
-     * @param  string $content
-     * @param  bool $changeHistory
+     * @param  string  $method
+     * @param  string  $action
+     * @param  array  $wildcards
+     * @param  array  $parameters
+     * @param  array  $files
+     * @param  array  $server
+     * @param  string  $content
+     * @param  bool  $changeHistory
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,8 +41,8 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the response view has a given piece of bound data.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param  string|array  $key
+     * @param  mixed  $value
      *
      * @return void
      */
@@ -60,14 +60,14 @@ interface TestCase extends TestCaseContract
     /**
      * Call a named route and return the Response.
      *
-     * @param  string $method
-     * @param  string $name
-     * @param  array $routeParameters
-     * @param  array $parameters
-     * @param  array $files
-     * @param  array $server
-     * @param  string $content
-     * @param  bool $changeHistory
+     * @param  string  $method
+     * @param  string  $name
+     * @param  array  $routeParameters
+     * @param  array  $parameters
+     * @param  array  $files
+     * @param  array  $server
+     * @param  string  $content
+     * @param  bool  $changeHistory
      *
      * @return \Illuminate\Http\Response
      */
@@ -76,8 +76,8 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the session has a given list of values.
      *
-     * @param  string|array $key
-     * @param  mixed $value
+     * @param  string|array  $key
+     * @param  mixed  $value
      *
      * @return void
      */
@@ -86,8 +86,8 @@ interface TestCase extends TestCaseContract
     /**
      * Assert whether the client was redirected to a given URI.
      *
-     * @param  string $uri
-     * @param  array $with
+     * @param  string  $uri
+     * @param  array  $with
      *
      * @return void
      */
@@ -96,7 +96,7 @@ interface TestCase extends TestCaseContract
     /**
      * Set the session to the given array.
      *
-     * @param  array $data
+     * @param  array  $data
      *
      * @return void
      */
@@ -112,9 +112,9 @@ interface TestCase extends TestCaseContract
     /**
      * Assert whether the client was redirected to a given action.
      *
-     * @param  string $name
-     * @param  array $parameters
-     * @param  array $with
+     * @param  string  $name
+     * @param  array  $parameters
+     * @param  array  $with
      *
      * @return void
      */
@@ -123,8 +123,8 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the session has errors bound.
      *
-     * @param  string|array $bindings
-     * @param  mixed $format
+     * @param  string|array  $bindings
+     * @param  mixed  $format
      *
      * @return void
      */
@@ -133,7 +133,7 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the response view is missing a piece of bound data.
      *
-     * @param  string $key
+     * @param  string  $key
      *
      * @return void
      */
@@ -142,13 +142,13 @@ interface TestCase extends TestCaseContract
     /**
      * Call the given HTTPS URI and return the Response.
      *
-     * @param  string $method
-     * @param  string $uri
-     * @param  array $parameters
-     * @param  array $files
-     * @param  array $server
-     * @param  string $content
-     * @param  bool $changeHistory
+     * @param  string  $method
+     * @param  string  $uri
+     * @param  array  $parameters
+     * @param  array  $files
+     * @param  array  $server
+     * @param  string  $content
+     * @param  bool  $changeHistory
      *
      * @return \Illuminate\Http\Response
      */
@@ -157,9 +157,9 @@ interface TestCase extends TestCaseContract
     /**
      * Assert whether the client was redirected to a given route.
      *
-     * @param  string $name
-     * @param  array $parameters
-     * @param  array $with
+     * @param  string  $name
+     * @param  array  $parameters
+     * @param  array  $with
      *
      * @return void
      */
@@ -175,7 +175,7 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the view has a given list of bound data.
      *
-     * @param  array $bindings
+     * @param  array  $bindings
      *
      * @return void
      */

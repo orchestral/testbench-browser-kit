@@ -9,23 +9,6 @@ BrowserKit Testbench Component is a simple package that is supposed to help you 
 [![Latest Unstable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/unstable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![License](https://poser.pugx.org/orchestra/testbench-browser-kit/license)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 
-* [Version Compatibility](#version-compatibility)
-* [Installation](#installation)
-* [Usages](#usages)
-    - [Installation](#installation)
-    - [Introduction](#introduction)
-    - [Interacting With Your Application](#interacting-with-your-application)
-        - [Interacting With Links](#interacting-with-links)
-        - [Interacting With Forms](#interacting-with-forms)
-    - [Testing JSON APIs](#testing-json-apis)
-        - [Verifying Exact Match](#verifying-exact-match)
-        - [Verifying Structural Match](#verifying-structural-match)
-    - [Sessions / Authentication](#sessions--authentication)
-    - [Disabling Middleware](#disabling-middleware)
-    - [Custom HTTP Requests](#custom-http-requests)
-    - [PHPUnit Assertions](#phpunit-assertions)
-* [Changelog](https://github.com/orchestral/testbench-browser-kit/releases)
-
 ## Version Compatibility
 
  Laravel  | Testbench Browser Kit

@@ -57,11 +57,11 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     /**
      * Boot the testing helper traits.
      *
-     * @return array
+     * @return array<string, string>
      */
     protected function setUpTraits()
     {
-        $uses = \array_flip(\class_uses_recursive(static::class));
+        $uses = array_flip(class_uses_recursive(static::class));
 
         return $this->setUpTheTestEnvironmentTraits($uses);
     }
@@ -76,17 +76,5 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
         $_ENV['APP_ENV'] = 'testing';
 
         $this->app = $this->createApplication();
-    }
-
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application   $app
-     *
-     * @return void
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        // Define your environment setup.
     }
 }
