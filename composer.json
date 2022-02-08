@@ -30,6 +30,18 @@
             "dev-master": "7.0-dev"
         }
     },
+    "scripts": {
+        "prepare": [
+            "@composer run post-autoload-dump"
+        ],
+        "test": [
+            "@composer run prepare",
+            "@php vendor/bin/phpunit -c ./ --color"
+        ],
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
+    },
     "config": {
         "sort-packages": true
     },

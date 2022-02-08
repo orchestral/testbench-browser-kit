@@ -38,7 +38,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request()
+    public function canSendRequest()
     {
         $crawler = $this->call('GET', 'hello');
 
@@ -50,7 +50,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_via_named_route()
+    public function canSendRequestViaNamedRoute()
     {
         $crawler = $this->route('GET', 'hi');
 
@@ -62,7 +62,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_with_prefix()
+    public function canSendRequestWithPrefix()
     {
         $crawler = $this->call('GET', 'boss/hello');
 
@@ -74,7 +74,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_with_prefix_via_named_route()
+    public function canSendRequestWithPrefixViaNamedRoute()
     {
         $crawler = $this->route('GET', 'boss.hi');
 
@@ -86,7 +86,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_using_action_helper()
+    public function canSendRequestUsingActionHelper()
     {
         $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
 
@@ -95,7 +95,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_using_call_helper()
+    public function canSendRequestUsingCallHelper()
     {
         $crawler = $this->call('GET', 'foo');
 
@@ -104,7 +104,7 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function can_send_request_using_post_and_return_json()
+    public function canSendRequestUsingPostAndReturnJson()
     {
         $crawler = $this->post('foo', [
             'content' => 'First comment',

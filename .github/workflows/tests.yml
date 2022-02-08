@@ -4,20 +4,22 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 3'
 
 jobs:
-  testd:
+  tests-on-phpunit-8:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
         os:
           - "ubuntu-latest"
+          - "windows-latest"
         php:
           - "7.3"
           - "7.4"
-          - "8.0"
+        phpunit:
+          - "^8.5.21"
         dependencies:
           - "locked"
           - "lowest"
@@ -25,7 +27,7 @@ jobs:
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.dependencies }})
+    name: PHP${{ matrix.php }} with PHPUnit${{ matrix.phpunit }} on ${{ matrix.os }} (${{ matrix.dependencies }})
 
     steps:
       - name: Checkout code
@@ -38,8 +40,69 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, intl, fileinfo
           coverage: none
 
+      - name: Install PHPUnit ${{ matrix.phpunit }}
+        run: |
+          composer require "phpunit/phpunit:${{ matrix.phpunit }}" --dev --no-interaction --no-update
+
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "--prefer-dist --no-cache"
+
+      - name: Prepare Testbench
+        run: composer run prepare
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
+
+  tests-on-phpunit-9:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      matrix:
+        os:
+          - "ubuntu-latest"
+          - "windows-latest"
+        php:
+          - "7.3"
+          - "7.4"
+          - "8.0"
+          - "8.1"
+        phpunit:
+          - "^9.5.10"
+        dependencies:
+          - "locked"
+          - "lowest"
+          - "highest"
+        experimental:
+          - false
+
+    name: PHP${{ matrix.php }} with PHPUnit${{ matrix.phpunit }} on ${{ matrix.os }} (${{ matrix.dependencies }})
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, intl, fileinfo
+          coverage: none
+
+      - name: Install PHPUnit ${{ matrix.phpunit }}
+        run: |
+          composer require "phpunit/phpunit:${{ matrix.phpunit }}" --no-interaction --no-update
+
+      - name: Install dependencies
+        uses: "ramsey/composer-install@v1"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "--prefer-dist --no-cache"
+
+      - name: Prepare Testbench
+        run: composer run prepare
 
       - name: Execute tests
         run: vendor/bin/phpunit
