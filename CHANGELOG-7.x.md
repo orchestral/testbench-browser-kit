@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 7.3.0
+
+Released: 2022-05-12
+
+### Changes
+
+* Update minimum support for Testbench v7.5.0+. ([v7.3.0...v7.5.0](https://github.com/orchestral/testbench/compare/v7.3.0...v7.5.0))
+
 ## 7.2.0
 
 Released: 2022-04-02
