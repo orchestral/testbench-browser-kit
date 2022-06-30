@@ -4,11 +4,11 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 ## 7.3.0
 
-Released: 2022-05-12
+Released: 2022-06-30
 
 ### Changes
 
-* Update minimum support for Testbench v7.5.0+. ([v7.3.0...v7.5.0](https://github.com/orchestral/testbench/compare/v7.3.0...v7.5.0))
+* Update minimum support for Testbench Core v7.6.0+. ([v7.5.0...v7.6.0](https://github.com/orchestral/testbench-core/compare/v7.5.0...v7.6.0))
 
 ## 7.2.0
 
