@@ -23,8 +23,8 @@
     "require": {
         "php": "^8.0",
         "laravel/browser-kit-testing": "^6.3",
-        "orchestra/testbench": "^7.8.1",
-        "symfony/dom-crawler": "^5.4 || ^6.0"
+        "orchestra/testbench": "^7.9",
+        "symfony/dom-crawler": "^6.0.9"
     },
     "extra": {
         "branch-alias": {
