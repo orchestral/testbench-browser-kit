@@ -2,6 +2,15 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 7.4.0
+
+Released: 2022-11-06
+
+### Changes
+
+* Update minimum support for Testbench Core v7.9.0+. ([v7.8.1...v7.9.0](https://github.com/orchestral/testbench-core/compare/v7.8.1...v7.9.0))
+* Bump minimum `symfony` dependencies to `6.0.9`.
+
 ## 7.3.5
 
 Released: 2022-10-04
