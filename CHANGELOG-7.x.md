@@ -10,10 +10,6 @@ Released: 2022-11-14
 
 * Update minimum support for Testbench Core v7.13.0+. ([v7.11.0...v7.13.0](https://github.com/orchestral/testbench-core/compare/v7.11.0...v7.13.0))
 
-### Fixes
-
-* Fixes dependencies.
-
 ## 7.6.1
 
 Released: 2022-11-14
