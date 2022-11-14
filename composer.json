@@ -27,7 +27,8 @@
         "symfony/dom-crawler": "^6.0.9"
     },
     "require-dev": {
-        "laravel/pint": "^1.1"
+        "laravel/pint": "^1.1",
+        "phpstan/phpstan": "^1.8"
     },
     "extra": {
         "branch-alias": {
@@ -35,22 +36,18 @@
         }
     },
     "scripts": {
-        "prepare": [
-            "@composer run post-autoload-dump"
-        ],
-        "test": [
+        "post-autoload-dump": "@composer run prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "ci": [
             "@composer run prepare",
-            "@php vendor/bin/phpunit -c ./ --color"
+            "@php vendor/bin/phpstan analyse",
+            "@php vendor/bin/pint",
+            "@composer run test"
         ],
-        "post-autoload-dump": [
-            "@php vendor/bin/testbench package:discover --ansi"
-        ]
+        "test": "@php vendor/bin/phpunit -c ./ --color"
     },
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev",
-    "require-dev": {
-        "laravel/pint": "^1.1"
-    }
+    "minimum-stability": "dev"
 }
