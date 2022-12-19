@@ -53,5 +53,12 @@ jobs:
       - name: Prepare Testbench
         run: composer run prepare
 
-      - name: Execute tests
+      - name: Execute tests (with deprecations)
         run: vendor/bin/phpunit
+        if: matrix.dependencies == 'highest'
+
+      - name: Execute tests (without deprecations)
+        run: vendor/bin/phpunit
+        env:
+          TESTBENCH_CONVERT_DEPRECATIONS_TO_EXCEPTIONS: false
+        if: matrix.dependencies != 'highest'
