@@ -55,10 +55,10 @@ jobs:
 
       - name: Execute tests (with deprecations)
         run: vendor/bin/phpunit
-        if: matrix.dependencies == 'highest'
+        if: matrix.os != 'windows-latest'
 
       - name: Execute tests (without deprecations)
         run: vendor/bin/phpunit
         env:
           TESTBENCH_CONVERT_DEPRECATIONS_TO_EXCEPTIONS: false
-        if: matrix.dependencies != 'highest'
+        if: matrix.os != 'windows-latest'
