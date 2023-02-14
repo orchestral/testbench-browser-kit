@@ -3,7 +3,7 @@ Laravel Browser Kit Testing Helper for Packages Development
 
 BrowserKit Testbench Component is a simple package that is supposed to help you write tests for your Laravel package using [laravel/browser-kit-testing](https://github.com/laravel/browser-kit-testing).
 
-[![tests](https://github.com/orchestral/testbench-browser-kit/workflows/tests/badge.svg?branch=7.x)](https://github.com/orchestral/testbench-browser-kit/actions?query=workflow%3Atests+branch%3A7.x)
+[![tests](https://github.com/orchestral/testbench-browser-kit/workflows/tests/badge.svg?branch=master)](https://github.com/orchestral/testbench-browser-kit/actions?query=workflow%3Atests+branch%3Amaster)
 [![Latest Stable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/stable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![Total Downloads](https://poser.pugx.org/orchestra/testbench-browser-kit/downloads)](https://packagist.org/packages/orchestra/testbench-browser-kit)
 [![Latest Unstable Version](https://poser.pugx.org/orchestra/testbench-browser-kit/v/unstable)](https://packagist.org/packages/orchestra/testbench-browser-kit)
