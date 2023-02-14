@@ -22,9 +22,8 @@
     },
     "require": {
         "php": "^8.1",
-        "laravel/browser-kit-testing": "^6.4 || dev-phpunit10",
+        "laravel/browser-kit-testing": "^6.4 || ^7.0",
         "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.0.7",
         "symfony/dom-crawler": "^6.2"
     },
     "require-dev": {
@@ -50,5 +49,6 @@
     "config": {
         "sort-packages": true
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
