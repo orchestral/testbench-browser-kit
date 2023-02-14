@@ -12,7 +12,6 @@ use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
 use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Orchestra\Testbench\Concerns\Testing;
 use PHPUnit\Framework\TestCase as PHPUnit;
-use PHPUnit\Util\Annotation\Registry;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
@@ -75,18 +74,5 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
         $_ENV['APP_ENV'] = 'testing';
 
         $this->app = $this->createApplication();
-    }
-
-    /**
-     * Clean up the testing environment before the next test case.
-     *
-     * @return void
-     */
-    public static function tearDownAfterClass(): void
-    {
-        (function () {
-            $this->classDocBlocks = [];
-            $this->methodDocBlocks = [];
-        })->call(Registry::getInstance());
     }
 }
