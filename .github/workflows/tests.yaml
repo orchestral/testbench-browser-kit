@@ -53,9 +53,6 @@ jobs:
       - name: Installed dependencies
         run: composer show -D
 
-      - name: Prepare Testbench
-        run: composer run prepare
-
       - name: Execute tests (with deprecations)
         run: vendor/bin/phpunit
         if: matrix.os != 'windows-latest'

@@ -38,8 +38,8 @@ jobs:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-cache"
 
-      - name: Prepare Testbench
-        run: composer run prepare
+      - name: Installed dependencies
+        run: composer show -D
 
       - name: Execute tests
         run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
