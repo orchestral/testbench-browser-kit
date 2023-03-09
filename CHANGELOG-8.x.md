@@ -4,6 +4,8 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 ## 8.0.1
 
+Released: 2023-03-09
+
 ### Changes
 
 * Update minimum support for Testbench v8.0.7+. ([v8.0.0...v8.0.7](https://github.com/orchestral/testbench/compare/v8.0.0...v8.0.7))
