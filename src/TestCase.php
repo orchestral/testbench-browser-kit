@@ -2,28 +2,22 @@
 
 namespace Orchestra\Testbench\BrowserKit;
 
-use Laravel\BrowserKitTesting\Concerns\ImpersonatesUsers;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithAuthentication;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithContainer;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithExceptionHandling;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithSession;
-use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
-use Orchestra\Testbench\Concerns\Testing;
+use Illuminate\Support\Str;
+use Laravel\BrowserKitTesting\Concerns as BrowserKitTesting;
+use Orchestra\Testbench\Concerns;
 use PHPUnit\Framework\TestCase as PHPUnit;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
-    use ImpersonatesUsers,
-        InteractsWithAuthentication,
-        InteractsWithConsole,
-        InteractsWithContainer,
-        InteractsWithDatabase,
-        InteractsWithExceptionHandling,
-        InteractsWithSession,
-        MakesHttpRequests,
-        Testing;
+    use BrowserKitTesting\ImpersonatesUsers,
+        BrowserKitTesting\InteractsWithAuthentication,
+        BrowserKitTesting\InteractsWithConsole,
+        BrowserKitTesting\InteractsWithContainer,
+        BrowserKitTesting\InteractsWithDatabase,
+        BrowserKitTesting\InteractsWithExceptionHandling,
+        BrowserKitTesting\InteractsWithSession,
+        BrowserKitTesting\MakesHttpRequests,
+        Concerns\Testing;
 
     /**
      * The base URL to use while testing the application.
@@ -62,6 +56,40 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
         $uses = array_flip(class_uses_recursive(static::class));
 
         return $this->setUpTheTestEnvironmentTraits($uses);
+    }
+
+    /**
+     * Determine trait should be ignored from being autoloaded.
+     *
+     * @param  class-string  $use
+     * @return bool
+     */
+    protected function setUpTheTestEnvironmentTraitToBeIgnored(string $use): bool
+    {
+        return Str::startsWith($use, [
+            Testing\RefreshDatabase::class,
+            Testing\DatabaseMigrations::class,
+            Testing\DatabaseTransactions::class,
+            Testing\WithoutMiddleware::class,
+            Testing\WithoutEvents::class,
+            Testing\WithFaker::class,
+            BrowserKitTesting\ImpersonatesUsers::class,
+            BrowserKitTesting\InteractsWithAuthentication::class,
+            BrowserKitTesting\InteractsWithConsole::class,
+            BrowserKitTesting\InteractsWithContainer::class,
+            BrowserKitTesting\InteractsWithDatabase::class,
+            BrowserKitTesting\InteractsWithExceptionHandling::class,
+            BrowserKitTesting\InteractsWithSession::class,
+            Concerns\CreatesApplication::class,
+            Concerns\Database\HandlesConnections::class,
+            Concerns\HandlesAnnotations::class,
+            Concerns\HandlesDatabases::class,
+            Concerns\HandlesRoutes::class,
+            Concerns\Testing::class,
+            Concerns\WithFactories::class,
+            Concerns\WithLaravelMigrations::class,
+            Concerns\WithLoadMigrationsFrom::class,
+        ]);
     }
 
     /**
