@@ -9,6 +9,7 @@ Released: 2023-03-09
 ### Changes
 
 * Update minimum support for Testbench v8.3.0+. ([v8.0.7...v8.3.0](https://github.com/orchestral/testbench/compare/v8.0.7...v8.3.0))
+* Add `setUpTheTestEnvironmentTraitToBeIgnored()` method to determine `setup<Concern>` and `teardown<Concern>` with imported traits that should be used on a given trait.
 
 ## 8.0.1
 
