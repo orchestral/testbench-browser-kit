@@ -2,6 +2,7 @@
 
 namespace Orchestra\Testbench\BrowserKit;
 
+use Illuminate\Foundation\Testing;
 use Illuminate\Support\Str;
 use Laravel\BrowserKitTesting\Concerns as BrowserKitTesting;
 use Orchestra\Testbench\Concerns;
