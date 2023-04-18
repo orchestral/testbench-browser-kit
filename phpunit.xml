@@ -8,7 +8,11 @@
          stopOnFailure="false"
          cacheDirectory=".phpunit.cache"
          backupStaticProperties="false">
+<<<<<<< HEAD
     <coverage includeUncoveredFiles="false" />
+=======
+    <coverage includeUncoveredFiles="false"/>
+>>>>>>> a888608 (wip)
     <source>
         <include>
             <directory suffix=".php">src/</directory>
