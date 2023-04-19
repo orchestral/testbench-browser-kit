@@ -8,7 +8,6 @@
          stopOnFailure="false"
          cacheDirectory=".phpunit.cache"
          backupStaticProperties="false">
-
     <coverage includeUncoveredFiles="false"/>
     <source>
         <include>
