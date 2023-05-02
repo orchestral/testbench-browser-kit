@@ -2,6 +2,15 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 8.2.0
+
+Released: 2023-05-02
+
+### Changes
+
+* Update minimum support for Testbench v8.5.0+. ([v8.3.0...v8.5.0](https://github.com/orchestral/testbench/compare/v8.3.0...v8.5.0))
+* Support PHPUnit `10.1`.
+
 ## 8.1.0
 
 Released: 2023-03-09
