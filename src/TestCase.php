@@ -62,9 +62,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function setUpTraits()
     {
-        $uses = array_flip(class_uses_recursive(static::class));
-
-        return $this->setUpTheTestEnvironmentTraits($uses);
+        return $this->setUpTheTestEnvironmentTraits(static::$cachedTestCaseUses);
     }
 
     /**
@@ -80,15 +78,24 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     }
 
     /**
+     * Prepare the testing environment before the running the test case.
+     *
+     * @return void
+     */
+    public static function setUpBeforeClass(): void
+    {
+        static::setupBeforeClassUsingPHPUnit();
+        static::setupBeforeClassUsingWorkbench();
+    }
+
+    /**
      * Clean up the testing environment before the next test case.
      *
      * @return void
      */
     public static function tearDownAfterClass(): void
     {
-        (function () {
-            $this->classDocBlocks = [];
-            $this->methodDocBlocks = [];
-        })->call(Registry::getInstance());
+        static::teardownAfterClassUsingWorkbench();
+        static::teardownAfterClassUsingPHPUnit();
     }
 }
