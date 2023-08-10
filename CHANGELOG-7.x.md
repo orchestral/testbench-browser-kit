@@ -129,7 +129,7 @@ Released: 2022-08-10
 
 ### Changes
 
-* Update minimum support for Testbench v7.6.1+. ([v7.6.0...v7.6.1](https://github.com/orchestral/testbench-core/compare/v7.6.0...v7.6.1))
+* Update minimum support for Testbench v7.6.2+. ([v7.6.0...v7.6.2](https://github.com/orchestral/testbench-core/compare/v7.6.0...v7.6.2))
 
 ## 7.3.0
 
