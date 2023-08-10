@@ -13,7 +13,6 @@ use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 use Laravel\BrowserKitTesting\Concerns\MocksApplicationServices;
 use Orchestra\Testbench\Concerns\Testing;
 use PHPUnit\Framework\TestCase as PHPUnit;
-use PHPUnit\Util\Annotation\Registry;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
