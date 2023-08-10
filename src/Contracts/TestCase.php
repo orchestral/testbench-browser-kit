@@ -10,7 +10,6 @@ interface TestCase extends TestCaseContract
      * Assert that the session has a given list of values.
      *
      * @param  array  $bindings
-     *
      * @return void
      */
     public function assertSessionHasAll(array $bindings);
@@ -26,7 +25,6 @@ interface TestCase extends TestCaseContract
      * @param  array  $server
      * @param  string  $content
      * @param  bool  $changeHistory
-     *
      * @return \Illuminate\Http\Response
      */
     public function action($method, $action, $wildcards = [], $parameters = [], $files = [], $server = [], $content = null, $changeHistory = true);
@@ -43,7 +41,6 @@ interface TestCase extends TestCaseContract
      *
      * @param  string|array  $key
      * @param  mixed  $value
-     *
      * @return void
      */
     public function assertViewHas($key, $value = null);
@@ -51,8 +48,7 @@ interface TestCase extends TestCaseContract
     /**
      * Assert that the client response has a given code.
      *
-     * @param  int $code
-     *
+     * @param  int  $code
      * @return void
      */
     public function assertResponseStatus($code);
@@ -68,7 +64,6 @@ interface TestCase extends TestCaseContract
      * @param  array  $server
      * @param  string  $content
      * @param  bool  $changeHistory
-     *
      * @return \Illuminate\Http\Response
      */
     public function route($method, $name, $routeParameters = [], $parameters = [], $files = [], $server = [], $content = null, $changeHistory = true);
@@ -78,7 +73,6 @@ interface TestCase extends TestCaseContract
      *
      * @param  string|array  $key
      * @param  mixed  $value
-     *
      * @return void
      */
     public function assertSessionHas($key, $value = null);
@@ -88,7 +82,6 @@ interface TestCase extends TestCaseContract
      *
      * @param  string  $uri
      * @param  array  $with
-     *
      * @return void
      */
     public function assertRedirectedTo($uri, $with = []);
@@ -97,7 +90,6 @@ interface TestCase extends TestCaseContract
      * Set the session to the given array.
      *
      * @param  array  $data
-     *
      * @return void
      */
     public function session(array $data);
@@ -115,7 +107,6 @@ interface TestCase extends TestCaseContract
      * @param  string  $name
      * @param  array  $parameters
      * @param  array  $with
-     *
      * @return void
      */
     public function assertRedirectedToAction($name, $parameters = [], $with = []);
@@ -125,7 +116,6 @@ interface TestCase extends TestCaseContract
      *
      * @param  string|array  $bindings
      * @param  mixed  $format
-     *
      * @return void
      */
     public function assertSessionHasErrors($bindings = [], $format = null);
@@ -134,7 +124,6 @@ interface TestCase extends TestCaseContract
      * Assert that the response view is missing a piece of bound data.
      *
      * @param  string  $key
-     *
      * @return void
      */
     public function assertViewMissing($key);
@@ -149,7 +138,6 @@ interface TestCase extends TestCaseContract
      * @param  array  $server
      * @param  string  $content
      * @param  bool  $changeHistory
-     *
      * @return \Illuminate\Http\Response
      */
     public function callSecure($method, $uri, $parameters = [], $files = [], $server = [], $content = null, $changeHistory = true);
@@ -160,7 +148,6 @@ interface TestCase extends TestCaseContract
      * @param  string  $name
      * @param  array  $parameters
      * @param  array  $with
-     *
      * @return void
      */
     public function assertRedirectedToRoute($name, $parameters = [], $with = []);
@@ -176,7 +163,6 @@ interface TestCase extends TestCaseContract
      * Assert that the view has a given list of bound data.
      *
      * @param  array  $bindings
-     *
      * @return void
      */
     public function assertViewHasAll(array $bindings);
