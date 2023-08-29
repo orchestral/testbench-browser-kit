@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 6.19.0
+
+Released: 2023-08-29
+
+### Changes
+
+* Update minimum support for Testbench v6.34.0+. ([v6.29.2...v6.34.0](https://github.com/orchestral/testbench/compare/v6.29.2...v6.34.0))
+
 ## 6.18.0
 
 Released: 2023-08-10
