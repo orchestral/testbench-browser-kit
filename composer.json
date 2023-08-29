@@ -23,7 +23,7 @@
     "require": {
         "php": "^8.0",
         "laravel/browser-kit-testing": "^6.3",
-        "orchestra/testbench": "^7.26.2",
+        "orchestra/testbench": "^7.30",
         "symfony/dom-crawler": "^6.0.9"
     },
     "require-dev": {
@@ -36,15 +36,18 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": "@composer run prepare",
+        "post-autoload-dump": "@prepare",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "ci": [
-            "@composer run prepare",
+        "lint": [
             "@php vendor/bin/phpstan analyse",
-            "@php vendor/bin/pint",
-            "@composer run test"
+            "@php vendor/bin/pint"
         ],
-        "test": "@php vendor/bin/phpunit -c ./ --color"
+        "test": "@php vendor/bin/phpunit -c ./ --color",
+        "ci": [
+            "@prepare",
+            "@lint",
+            "@test"
+        ]
     },
     "config": {
         "sort-packages": true
