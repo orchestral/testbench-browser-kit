@@ -10,15 +10,15 @@ use PHPUnit\Framework\TestCase as PHPUnit;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
-    use BrowserKitTesting\ImpersonatesUsers,
-        BrowserKitTesting\InteractsWithAuthentication,
-        BrowserKitTesting\InteractsWithConsole,
-        BrowserKitTesting\InteractsWithContainer,
-        BrowserKitTesting\InteractsWithDatabase,
-        BrowserKitTesting\InteractsWithExceptionHandling,
-        BrowserKitTesting\InteractsWithSession,
-        BrowserKitTesting\MakesHttpRequests,
-        Concerns\Testing;
+    use BrowserKitTesting\ImpersonatesUsers;
+    use BrowserKitTesting\InteractsWithAuthentication;
+    use BrowserKitTesting\InteractsWithConsole;
+    use BrowserKitTesting\InteractsWithContainer;
+    use BrowserKitTesting\InteractsWithDatabase;
+    use BrowserKitTesting\InteractsWithExceptionHandling;
+    use BrowserKitTesting\InteractsWithSession;
+    use BrowserKitTesting\MakesHttpRequests;
+    use Concerns\Testing;
 
     /**
      * The base URL to use while testing the application.
@@ -65,7 +65,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function setUpTheTestEnvironmentTraitToBeIgnored(string $use): bool
     {
-        return Str::startsWith($use, [
+        return in_array($use, [
             Testing\RefreshDatabase::class,
             Testing\DatabaseMigrations::class,
             Testing\DatabaseTransactions::class,
