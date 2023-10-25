@@ -16,8 +16,10 @@ jobs:
         php:
           - 8.1
           - 8.2
+          - 8.3
         phpunit:
-          - "^10.1"
+          - "~10.1.0"
+          - "~10.4.0"
         dependencies:
           - "highest"
           - "lowest"
@@ -28,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout repository and submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -66,7 +68,7 @@ jobs:
           - 8.1
           - 8.2
         phpunit:
-          - "^9.6"
+          - "~9.6.0"
         dependencies:
           - "highest"
           - "lowest"
@@ -77,7 +79,7 @@ jobs:
 
     steps:
       - name: Checkout repository and submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
