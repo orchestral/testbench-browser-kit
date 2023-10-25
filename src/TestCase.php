@@ -3,7 +3,6 @@
 namespace Orchestra\Testbench\BrowserKit;
 
 use Illuminate\Foundation\Testing;
-use Illuminate\Support\Str;
 use Laravel\BrowserKitTesting\Concerns as BrowserKitTesting;
 use Orchestra\Testbench\Concerns;
 use Orchestra\Testbench\PHPUnit\TestCase as PHPUnit;
@@ -65,7 +64,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      */
     protected function setUpTheTestEnvironmentTraitToBeIgnored(string $use): bool
     {
-        return in_array($use, [
+        return \in_array($use, [
             Testing\RefreshDatabase::class,
             Testing\DatabaseMigrations::class,
             Testing\DatabaseTransactions::class,
