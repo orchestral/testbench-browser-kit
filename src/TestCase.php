@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing;
 use Illuminate\Support\Str;
 use Laravel\BrowserKitTesting\Concerns as BrowserKitTesting;
 use Orchestra\Testbench\Concerns;
-use PHPUnit\Framework\TestCase as PHPUnit;
+use Orchestra\Testbench\PHPUnit\TestCase as PHPUnit;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
 {
