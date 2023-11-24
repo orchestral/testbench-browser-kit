@@ -31,6 +31,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->setUpTheTestEnvironment();
@@ -41,6 +42,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function tearDown(): void
     {
         $this->tearDownTheTestEnvironment();
@@ -109,6 +111,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      *
      * @return void
      */
+    #[\Override]
     public static function setUpBeforeClass(): void
     {
         static::setupBeforeClassUsingPHPUnit();
@@ -120,6 +123,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      *
      * @return void
      */
+    #[\Override]
     public static function tearDownAfterClass(): void
     {
         static::teardownAfterClassUsingWorkbench();
