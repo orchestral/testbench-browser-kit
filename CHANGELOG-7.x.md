@@ -4,7 +4,7 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 ## 7.15.0
 
-Released: 2023-08-29
+Released: 2023-10-04
 
 ### Changes
 
