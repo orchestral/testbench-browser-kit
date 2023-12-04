@@ -23,7 +23,7 @@
     "require": {
         "php": "^8.0",
         "laravel/browser-kit-testing": "^6.3",
-        "orchestra/testbench": "^7.30",
+        "orchestra/testbench": "^7.36",
         "symfony/dom-crawler": "^6.0.9"
     },
     "require-dev": {
@@ -52,6 +52,5 @@
     "config": {
         "sort-packages": true
     },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
