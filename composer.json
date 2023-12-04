@@ -21,9 +21,9 @@
         }
     },
     "require": {
-        "php": "^8.1",
-        "laravel/browser-kit-testing": "^6.4 || ^7.0",
-        "orchestra/testbench": "^8.16",
+        "php": "^8.2",
+        "laravel/browser-kit-testing": "dev-develop",
+        "orchestra/testbench": "^9.0",
         "symfony/dom-crawler": "^6.2"
     },
     "require-dev": {
