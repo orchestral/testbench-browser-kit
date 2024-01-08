@@ -99,6 +99,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function refreshApplication()
     {
         $_ENV['APP_ENV'] = 'testing';
