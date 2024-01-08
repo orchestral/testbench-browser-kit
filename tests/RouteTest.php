@@ -4,6 +4,7 @@ namespace Orchestra\Testbench\BrowserKit\Tests;
 
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\BrowserKit\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class RouteTest extends TestCase
 {
@@ -36,7 +37,7 @@ class RouteTest extends TestCase
         $router->resource('foo', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller');
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequest()
     {
         $crawler = $this->call('GET', 'hello');
@@ -48,7 +49,7 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye world', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestViaNamedRoute()
     {
         $crawler = $this->route('GET', 'hi');
@@ -60,7 +61,7 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye world', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestWithPrefix()
     {
         $crawler = $this->call('GET', 'boss/hello');
@@ -72,7 +73,7 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye boss', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestWithPrefixViaNamedRoute()
     {
         $crawler = $this->route('GET', 'boss.hi');
@@ -84,7 +85,7 @@ class RouteTest extends TestCase
         $this->assertEquals('goodbye boss', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestUsingActionHelper()
     {
         $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
@@ -93,7 +94,7 @@ class RouteTest extends TestCase
         $this->assertEquals('Controller@index', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestUsingCallHelper()
     {
         $crawler = $this->call('GET', 'foo');
@@ -102,7 +103,7 @@ class RouteTest extends TestCase
         $this->assertEquals('Controller@index', $crawler->getContent());
     }
 
-    /** @test */
+    #[Test]
     public function canSendRequestUsingPostAndReturnJson()
     {
         $crawler = $this->post('foo', [
