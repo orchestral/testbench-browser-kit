@@ -17,13 +17,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/"
+            "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
         }
     },
     "require": {
         "php": "^8.1",
         "laravel/browser-kit-testing": "^6.4 || ^7.0",
-        "orchestra/testbench": "^8.16",
+        "orchestra/testbench": "^8.20",
         "symfony/dom-crawler": "^6.2"
     },
     "require-dev": {
@@ -52,5 +53,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "stable"
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
