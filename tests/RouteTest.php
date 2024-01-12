@@ -5,6 +5,7 @@ namespace Orchestra\Testbench\BrowserKit\Tests;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\BrowserKit\TestCase;
 use PHPUnit\Framework\Attributes\Test;
+use Workbench\App\Http\Controllers\Controller;
 
 class RouteTest extends TestCase
 {
@@ -34,7 +35,7 @@ class RouteTest extends TestCase
             })->name('boss.bye');
         });
 
-        $router->resource('foo', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller');
+        $router->resource('foo', Controller::class);
     }
 
     #[Test]
@@ -88,7 +89,7 @@ class RouteTest extends TestCase
     #[Test]
     public function canSendRequestUsingActionHelper()
     {
-        $crawler = $this->action('GET', 'Orchestra\Testbench\BrowserKit\Tests\Stubs\Controller@index');
+        $crawler = $this->action('GET', sprintf('%s@index', Controller::class));
 
         $this->assertResponseOk();
         $this->assertEquals('Controller@index', $crawler->getContent());

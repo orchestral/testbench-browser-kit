@@ -17,7 +17,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/"
+            "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
         }
     },
     "require": {
