@@ -5,6 +5,7 @@ namespace Orchestra\Testbench\BrowserKit;
 use Illuminate\Foundation\Testing;
 use Laravel\BrowserKitTesting\Concerns as BrowserKitTesting;
 use Orchestra\Testbench\Concerns;
+use Orchestra\Testbench\Pest;
 use Orchestra\Testbench\PHPUnit\TestCase as PHPUnit;
 
 abstract class TestCase extends PHPUnit implements Contracts\TestCase
@@ -114,8 +115,15 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     #[\Override]
     public static function setUpBeforeClass(): void
     {
-        static::setupBeforeClassUsingPHPUnit();
-        static::setupBeforeClassUsingWorkbench();
+        static::setUpBeforeClassUsingPHPUnit();
+
+        /** @phpstan-ignore-next-line */
+        if (static::usesTestingConcern(Pest\WithPest::class)) {
+            static::setUpBeforeClassUsingPest(); // @phpstan-ignore-line
+        }
+
+        static::setUpBeforeClassUsingTestCase();
+        static::setUpBeforeClassUsingWorkbench();
     }
 
     /**
@@ -126,7 +134,14 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     #[\Override]
     public static function tearDownAfterClass(): void
     {
-        static::teardownAfterClassUsingWorkbench();
-        static::teardownAfterClassUsingPHPUnit();
+        static::tearDownAfterClassUsingWorkbench();
+        static::tearDownAfterClassUsingTestCase();
+
+        /** @phpstan-ignore-next-line */
+        if (static::usesTestingConcern(Pest\WithPest::class)) {
+            static::tearDownAfterClassUsingPest(); // @phpstan-ignore-line
+        }
+
+        static::tearDownAfterClassUsingPHPUnit();
     }
 }
