@@ -18,7 +18,9 @@
     "autoload-dev": {
         "psr-4": {
             "Orchestra\\Testbench\\BrowserKit\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
     "require": {
@@ -37,8 +39,18 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": "@prepare",
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
         "lint": [
             "@php vendor/bin/phpstan analyse",
             "@php vendor/bin/pint"
