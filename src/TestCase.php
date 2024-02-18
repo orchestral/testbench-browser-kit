@@ -28,6 +28,13 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
     protected $baseUrl = 'http://localhost';
 
     /**
+     * The latest test response (if any).
+     *
+     * @var \Illuminate\Testing\TestResponse|null
+     */
+    public static $latestResponse;
+
+    /**
      * Setup the test environment.
      *
      * @return void
