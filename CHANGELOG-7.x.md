@@ -1,4 +1,4 @@
-# Changelog for 7.x
+# Changes for 7.x
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
