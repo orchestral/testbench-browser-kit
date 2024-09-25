@@ -89,7 +89,7 @@ class RouteTest extends TestCase
     #[Test]
     public function canSendRequestUsingActionHelper()
     {
-        $crawler = $this->action('GET', sprintf('%s@index', Controller::class));
+        $crawler = $this->action('GET', \sprintf('%s@index', Controller::class));
 
         $this->assertResponseOk();
         $this->assertEquals('Controller@index', $crawler->getContent());
