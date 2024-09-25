@@ -26,12 +26,12 @@
     "require": {
         "php": "^8.2",
         "laravel/browser-kit-testing": "^7.2",
-        "orchestra/testbench": "^9.2",
+        "orchestra/testbench": "^9.5",
         "symfony/dom-crawler": "^7.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.6",
-        "phpstan/phpstan": "^1.10.50"
+        "laravel/pint": "^1.17",
+        "phpstan/phpstan": "^1.11"
     },
     "scripts": {
         "post-autoload-dump": [
