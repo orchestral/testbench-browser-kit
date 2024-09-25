@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-browser-kit`.
 
+## 9.1.0
+
+Released: 2024-09-25
+
+### Changes
+
+* Update minimum support for Testbench v9.5.0+. ([v9.0.0...v9.5.0](https://github.com/orchestral/testbench/compare/v9.0.0...v9.5.0))
+
 ## 9.0.0
 
 Released: 2024-13-13
