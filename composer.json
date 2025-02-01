@@ -25,9 +25,9 @@
     },
     "require": {
         "php": "^8.2",
-        "laravel/browser-kit-testing": "^7.2.2",
-        "orchestra/testbench": "^9.7",
-        "symfony/dom-crawler": "^7.0.3"
+        "laravel/browser-kit-testing": "^7.2.3",
+        "orchestra/testbench": "^10.0",
+        "symfony/dom-crawler": "^7.2"
     },
     "require-dev": {
         "laravel/pint": "^1.17",
