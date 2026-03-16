@@ -81,7 +81,6 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
             BrowserKitTesting\InteractsWithExceptionHandling::class,
             BrowserKitTesting\InteractsWithSession::class,
             Concerns\CreatesApplication::class,
-            Concerns\HandlesAnnotations::class,
             Concerns\HandlesDatabases::class,
             Concerns\HandlesRoutes::class,
             Concerns\InteractsWithMigrations::class,

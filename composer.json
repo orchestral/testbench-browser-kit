@@ -24,14 +24,14 @@
         }
     },
     "require": {
-        "php": "^8.2",
-        "laravel/browser-kit-testing": "^7.2.4",
-        "orchestra/testbench": "^10.1.0",
-        "symfony/dom-crawler": "^7.2"
+        "php": "^8.3",
+        "laravel/browser-kit-testing": "^7.2.7",
+        "orchestra/testbench": "^11.0.0",
+        "symfony/dom-crawler": "^7.4|^8.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.20",
-        "phpstan/phpstan": "^2.1"
+        "laravel/pint": "^1.24",
+        "phpstan/phpstan": "^2.1.38"
     },
     "scripts": {
         "post-autoload-dump": [
