@@ -5,6 +5,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   tests-on-phpunit-10:
     runs-on: "ubuntu-latest"
